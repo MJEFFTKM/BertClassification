@@ -18,12 +18,12 @@ ENV TEST_DATA_ROOT /test_data
 
 RUN mkdir $PROJECT_ROOT $DATA_ROOT
 
-RUN download_model.sh
-#здесь могут быть проблемы
 
 COPY . $PROJECT_ROOT
 
 WORKDIR $PROJECT_ROOT
+
+CMD BASH download_model.sh
 
 RUN pip install -r requirements.txt
 
